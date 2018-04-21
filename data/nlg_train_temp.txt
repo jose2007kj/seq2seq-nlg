@@ -1,0 +1,110 @@
+hi i checked a few options for you and unfortunately we do not currently have any trips that meet this criteria would you like to book an alternate travel option	dst_city no_result sorry suggest
+i checked the availability for this date and there were no trips available would you like to select some alternate dates	end_date no_result str_date suggest
+i checked the availability for that date and there were no trips available would you like to select some alternate dates	end_date no_result str_date suggest
+hi sorry i can't find any trips from or_city to dst_city for you	dst_city no_result or_city sorry
+sorry i cannot find any trips leaving from or_city could you suggest another nearby departure city	no_result or_city sorry suggest
+there are no trips available to dst_city	dst_city no_result
+i cannot find any trips available to dst_city	dst_city no_result
+i can book you a duration trip to dst_city leaving from or_city is this ok	dst_city duration id or_city suggest
+i can book you a trip from or_city to dst_city for price usd	dst_city id or_city price suggest
+you would arrive in dst_city str_date and return to or_city on end_date	dst_city end_date inform or_city str_date
+i can not find any trips from or_city to dst_city for duration	dst_city duration no_result or_city
+there are no activities listed for this package you will be staying at the name for duration this hotel has a category star rating and wifi will i go ahead and action this package	action amenities category duration inform name suggest wifi
+great your flight departs from birmingham at dep_time_or str_date enjoy your trip i have actioned this package for you	action dep_time_or inform str_date write
+when would you like to travel and how many people will you be	n_adults n_children request str_date
+do you have a budget	budget request
+where will you be travelling from	or_city request
+we have nothing available leaving from or_city are you able to depart from another city	no_result or_city suggest
+dst_city is not a destination we travel to are you interested in any other destinations	dst_city no_result suggest
+would you be interested in dst_city	dst_city id suggest
+i have a departure from or_city to dst_city on str_date returning on end_date does that work for you	dst_city end_date id offer or_city str_date
+how about a trip to dst_city it is quite cheap at this time of year	dst_city id suggest
+i have the name hotel available in dst_city str_date	dst_city id name offer str_date
+category stars you would have to fly out of or_city though	category inform or_city
+and what would be your maximum budget for this trip	budget request
+how many adults and how many children will be making this trip	n_adults n_children request
+i have no trips to dst_city from or_city i do have a trip to dst_city one to dst_city and another to dst_city would you like to select alternate dates or an alternate travel destination	dst_city end_date id no_result or_city str_date suggest
+yes i do i have one for price usd would you like to action this package the guest rating is gst_rating and there is parking and wifi leaving str_date at dep_time_or and returning end_date	action dep_time_or end_date id offer str_date suggest wifi
+yes it is	breakfast inform
+would you like to action this package	action suggest
+i have count available within your budget how long would you like to travel for and do you have dates in mind	count duration end_date inform request str_date
+i can book duration at a category star hotel for price i can also book duration at a category star hotel for price	category duration id offer price
+the category trip leaves or_city str_date and returns end_date the category leaves str_date from or_city and returns end_date	end_date inform or_city str_date write
+perfect i will action that trip for you now you will depart or_city at dep_time_or have a nice day	action dep_time_or inform or_city write
+for how many days	max_duration request
+what will your departure city be	or_city request
+i have a direct flight leaving from or_city on str_date and returning on end_date does that work for you	action end_date id offer or_city str_date suggest
+it is the name in dst_city it has a category rating	category dst_city inform name
+you would be flying seat class for a grand total of only price	inform price seat
+i have a package at the name whcih has a category star rating on an seat class flight on the same dates for price	category id name price seat suggest
+this deal includes breakfast and wifi would you like me to action it for you	action breakfast inform suggest wifi
+i have a trip available to dst_city for these dates within your price range would you like to increase your budget or adjust the dates	budget dst_city end_date id str_date suggest
+still no availability for this destination would you like to increase your budget or adjust the dates	budget dst_city end_date no_result str_date suggest
+still no availability	no_result
+have you got a budget for this vacation	budget request
+i can book you duration in dst_city for price at a category star hotel,	category dst_city duration id offer price
+i am unable to find any budget packages for dst_city	budget dst_city no_result
+you can stay in dst_city for duration for price leaving from or_city	dst_city duration id offer or_city price
+i cannot find any trips available from or_city to dst_city	dst_city no_result or_city
+i cannot find any trips available from or_city to any destinations this point of departure is not in my database	no_result or_city
+hello would that be dst_city	confirm dst_city greeting
+and what city will you be departing from	or_city request
+how many people will be travelling together	n_adults n_children request
+do you have specific dates in mind	end_date request str_date
+and for how long would you like to go for	max_duration request
+i have no flights available to dst_city but i have package available to dst_city	dst_city id no_result suggest
+i have count_name available do you have a budget in mind	budget count_name inform request
+it would be helpful if you could provide me with some dates	end_date request str_date
+i am very sorry but i have nothing available at the moment	no_result sorry
+would you like to have a departure from a specific location	or_city request
+and what destination would you like to travel to	dst_city request
+how about dst_city or dst_city	dst_city id offer
+dst_city is unavailable porto alegre is available but you would have to leave from or_city	dst_city inform no_result or_city write
+i have no departures available from or_city for these dates would you like to make a date change	end_date no_result or_city str_date suggest
+i'm sorry but we do not have any departures from or_city available for these dates for the budget you provided would you like to adjust your budget for this trip	budget budget_ok end_date no_result or_city sorry str_date suggest
+would you like to travel to dst_city from or_city	dst_city id or_city suggest
+i can book you an duration trip from or_city to dst_city for price	dst_city duration id or_city price suggest
+i can book you a trip from or_city to dst_city for budget	budget dst_city id or_city suggest
+i can book you a trip from or_city to dst_city for price	dst_city id or_city price suggest
+i cannot book you a trip leaving from or_city	no_result or_city
+i can book duration in dst_city leaving from or_city for price	dst_city duration id offer or_city price
+i can book duration in dst_city for price	dst_city duration id price suggest
+category star hotel for wifi parking and breakfast	breakfast category inform parking wifi
+i cannot provide this information	canthelp
+ok i will action this package for you will be leaving or_city at dep_time_or str_date and arriving in dst_city at arr_time_dst you will be staying at name enjoy your trip	action arr_time_dst dep_time_or dst_city inform name or_city str_date
+i can book you duration in dst_city leaving or_city on str_date for price	dst_city duration id or_city price str_date suggest
+ok i will action you the package to dst_city that leaves or_city on str_date	action dst_city inform or_city str_date
+i have id choices dst_city or dst_city	dst_city id suggest
+i have count_name do you have a budget in mind	budget count_name inform request
+i have the name in dst_city which is a category hotel at price or the name in dst_city which is a category hotel at price both are for a duration stay	category dst_city duration name offer price
+i have a direct flight to dst_city departing on dep_time_or and returning on dep_time_dst would you like me to action that for you	action dep_time_dst dep_time_or dst_city id offer suggest
+i have a flight available departing on dep_time_or and returning on dep_time_dst	dep_time_dst dep_time_or id offer
+perfect thank you	thankyou
+do you have a preferred set of dates for this trip	end_date request str_date
+and how many adults and how many children are you bringing with you to atlantis	inform n_adults n_children read request
+i'm sorry but we do not currently have any travel packages available for this destination do you have any other destinations that you might like to travel to	dst_city no_result sorry suggest
+i'm sorry but i do not currently have any travel packages available for this location are you quite sure that i cannot interest you in another travel destination	dst_city no_result sorry suggest
+and how many children and adults will you be bringing with you	n_adults n_children request
+i'm sorry but this travel destination is not available	dst_city no_result sorry
+dst_city is unavailable dst_city would be available however would you like to select another location	dst_city id no_result suggest
+i am sorry but we do not have any trips available to the dst_city travel destination	dst_city no_result sorry
+dst_city is not available either	dst_city no_result
+where would you like to go	dst_city request
+would a duration trip work for you	duration id suggest
+great i have a flight departing on the str_date and returning on the end_date	end_date id offer str_date
+it is called name and it is a category hotel that includes breakfast wifi and parking the total cost would be price	breakfast category inform name parking price wifi
+it is an seat class flight	inform seat
+perfect have a great trip	action inform
+how many adults and how many children will you be bringing with you do you have a preferred departure location what would be your maximum budget	budget n_adults n_children or_city request
+i do not have any packages available from that departure location for that budget would you like to adjust the budget	budget budget_ok no_result or_city suggest
+would you like to suggest another departure location and what travel destination would you like to travel to	dst_city or_city request suggest
+there are no travel packages available to dst_city	dst_city no_result
+yes i have a package available leaving or_city at dep_time_or on str_date and returning to or_city at arr_time_or on end_date this package offers breakfast wifi and parking the cost of this package is price would you like to action this package	action arr_time_or breakfast dep_time_or end_date id offer or_city parking price str_date suggest wifi
+i can't help you with that	canthelp
+the tickets are economy i'm sorry we do not have any tickets available to seat class for this flight would you like to action this package	action inform negate seat sorry suggest
+i can look into your options for you where would you like to depart from	or_city request
+i can book duration in dst_city leaving from or_city for price or if you're interested 1id days in dst_city for price	dst_city duration id offer or_city price
+the mexico city hotel is category stars with breakfast and wifi while the columbus hotel is category stars with parking and wifi	breakfast category inform parking wifi write
+i can get you duration at a category start hotel in dst_city for price	category dst_city duration id offer price
+you can spend duration in dst_city at a category star hotel for price	category dst_city duration id offer price
+the hotel is name and has breakfast and wifi you can also stay at name for duration this hotel has a category rating as well with breakfast and wifi	breakfast category duration id inform name suggest wifi
