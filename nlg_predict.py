@@ -147,7 +147,7 @@ with open('ip_word2index.json', 'r') as file_object: #for loading word2index
 with open('op_index2word.json', 'r') as file_object: #for loading word2index
         index2word = json.load(file_object)
         print index2word
-output_n_words=233
+output_n_words=214
 input_n_words=38
 attn_model = 'general'
 hidden_size = 500
@@ -155,8 +155,8 @@ n_layers = 2
 dropout_p = 0.05
 encoder = EncoderRNN(input_n_words, hidden_size, n_layers)
 decoder = AttnDecoderRNN(attn_model, hidden_size, output_n_words, n_layers, dropout_p=dropout_p)
-encoder.load_state_dict(torch.load('./encoder.pth'))
-decoder.load_state_dict(torch.load('./attn_decoder.pth'))
+encoder.load_state_dict(torch.load('./encodertest{{n_layers}}.pth'))
+decoder.load_state_dict(torch.load('./attn_decodertest{{n_epochs}}.pth'))
 
 
 def evaluate(sentence, max_length=30):
