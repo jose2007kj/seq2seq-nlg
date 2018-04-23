@@ -143,12 +143,12 @@ class AttnDecoderRNN(nn.Module):
 
 with open('ip_word2index.json', 'r') as file_object: #for loading word2index
         word2index = json.load(file_object)
-        print word2index
+        # print word2index
 with open('op_index2word.json', 'r') as file_object: #for loading word2index
         index2word = json.load(file_object)
-        print index2word
-output_n_words=214
-input_n_words=38
+        # print index2word
+output_n_words=207
+input_n_words=36
 attn_model = 'general'
 hidden_size = 500
 n_layers = 2
@@ -211,10 +211,10 @@ def variable_from_sentence(sentence):
     return var
 
 for i in range(0,10):
-    text = raw_input("please enter the key words")
+    text = raw_input("please enter the key words<-------:")
     output_words, attentions = evaluate(text)
     output_sentence = ' '.join(output_words)
     
-    print('predicted-output:', output_sentence)
-    print('')
+    print 'predicted-output: ---->', output_sentence
+    # print '')
 
