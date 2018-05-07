@@ -4,7 +4,8 @@ import re
 import random
 import time
 import math
-
+import matplotlib.pyplot as plt #may testing
+import matplotlib.ticker as ticker
 import torch
 import torch.nn as nn
 from torch.autograd import Variable
@@ -141,22 +142,22 @@ class AttnDecoderRNN(nn.Module):
 
 
 
-with open('ip_word2index.json', 'r') as file_object: #for loading word2index
+with open('test_ip_word2index.json', 'r') as file_object: #for loading word2index
         word2index = json.load(file_object)
         # print word2index
-with open('op_index2word.json', 'r') as file_object: #for loading word2index
+with open('test_op_index2word.json', 'r') as file_object: #for loading word2index
         index2word = json.load(file_object)
         # print index2word
-output_n_words=207
-input_n_words=36
+output_n_words=357
+input_n_words=60
 attn_model = 'general'
 hidden_size = 500
 n_layers = 2
 dropout_p = 0.05
 encoder = EncoderRNN(input_n_words, hidden_size, n_layers)
 decoder = AttnDecoderRNN(attn_model, hidden_size, output_n_words, n_layers, dropout_p=dropout_p)
-encoder.load_state_dict(torch.load('./encodertest{{n_layers}}.pth'))
-decoder.load_state_dict(torch.load('./attn_decodertest{{n_epochs}}.pth'))
+encoder.load_state_dict(torch.load('./test_encodertest{{n_layers}}.pth'))
+decoder.load_state_dict(torch.load('./test_attn_decodertest{{n_epochs}}.pth'))
 
 
 def evaluate(sentence, max_length=30):
@@ -209,12 +210,45 @@ def variable_from_sentence(sentence):
 #     print('var =', var)
     if USE_CUDA: var = var.cuda()
     return var
+def show_attention(input_sentence, output_words, attentions):
+    # Set up figure with colorbar
+    fig = plt.figure(num=None, figsize=(8, 6), dpi=80, facecolor='w', edgecolor='k')
+    ax = fig.add_subplot(111)
+    cax = ax.matshow(attentions.numpy(), cmap='bone')
+    fig.colorbar(cax)
+
+    # Set up axes
+    ax.set_xticklabels([''] + input_sentence.split(' ') + ['<EOS>'], rotation=90)
+    ax.set_yticklabels([''] + output_words)
+
+    # Show label at every tick
+    ax.xaxis.set_major_locator(ticker.MultipleLocator(1))
+    ax.yaxis.set_major_locator(ticker.MultipleLocator(1))
+    plt.savefig('result_'+str(i)+'_attention_labels.png')
+    # plt.show()
+    plt.close()
+
+def evaluate_and_show_attention(input_sentence):
+    output_words, attentions = evaluate(input_sentence)
+    # print('input =', input_sentence)
+    # print('output =', ' '.join(output_words))
+    show_attention(input_sentence, output_words, attentions)
 
 for i in range(0,10):
-    text = raw_input("please enter the key words<-------:")
+    print '\n \n \n'
+    print 'Test Sample No:',i
+    text = raw_input("************please enter the key words *****************: \n")
     output_words, attentions = evaluate(text)
     output_sentence = ' '.join(output_words)
+
+    # for plotting graph
+    # output_words, attentions = evaluate("je suis trop froid .")
+    plt.matshow(attentions.numpy())
+    plt.savefig('result_'+str(i)+'_attention.png')
+    plt.clf()
+    evaluate_and_show_attention(text)
     
-    print 'predicted-output: ---->', output_sentence
+    print '************Predicted-output ************: \n'
+    print output_sentence
     # print '')
 

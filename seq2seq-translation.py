@@ -166,7 +166,7 @@ def read_langs(lang1, lang2, reverse=False):
     print("Reading lines...")
 
     # Read the file and split into lines
-    lines = io.open('data/nlg_train_temp.txt').read().strip().split('\n')
+    lines = io.open('data/temp_test.txt').read().strip().split('\n')
     
     # Split every line into pairs and normalize
     pairs = [[normalize_string(s) for s in l.split('\t')] for l in lines]
@@ -233,9 +233,9 @@ def prepare_data(lang1_name, lang2_name, reverse=False):
         input_lang.index_words(pair[0])
         output_lang.index_words(pair[1])
         #below 2 jsons for storing for prediction
-    with open('ip_word2index.json', 'w') as outfile: #by jose
+    with open('test_ip_word2index.json', 'w') as outfile: #by jose
         json.dump(input_lang.word2index,outfile)
-    with open('op_index2word.json', 'w') as outfile: #by jose
+    with open('test_op_index2word.json', 'w') as outfile: #by jose
         json.dump(output_lang.index2word,outfile)
     # json.dump('ip_word2index.json',input_lang.word2index)
     # json.dump('op_index2word.json',input_lang.index2word)
@@ -767,8 +767,8 @@ for epoch in range(1, n_epochs + 1):
         plot_loss_avg = plot_loss_total / plot_every
         plot_losses.append(plot_loss_avg)
         plot_loss_total = 0
-torch.save(encoder.state_dict(), './encodertest{{n_layers}}.pth')
-torch.save(decoder.state_dict(), './attn_decodertest{{n_epochs}}.pth')
+torch.save(encoder.state_dict(), './test_encodertest{{n_layers}}.pth')
+torch.save(decoder.state_dict(), './test_attn_decodertest{{n_epochs}}.pth')
 
 # ## Plotting training loss
 # 
